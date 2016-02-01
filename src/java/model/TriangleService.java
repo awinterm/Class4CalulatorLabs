@@ -10,26 +10,32 @@ package model;
  * @author andre_000
  */
 public class TriangleService {
-    private int height;
-    private int base;
+    private double height;
+    private double base;
     private String area;
 
-    public TriangleService(int height, int width) {
-        this.height = height;
-        this.base = width;
+    public TriangleService(String height, String base) {
+        this.height = Double.parseDouble(height);
+        this.base = Double.parseDouble(base);
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public int getBase() {
+    public double getBase() {
         return base;
     }
+
+    public void setBase(double base) {
+        this.base = base;
+    }
+
+   
 
     public void setBase(int base) {
         this.base = base;

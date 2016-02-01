@@ -15,8 +15,8 @@ public class CircleService {
     
     
     
-    public CircleService(double radius) {
-        this.radius = radius;
+    public CircleService(String radius) {
+        this.radius = Double.parseDouble(radius);
     }
 
     public double getRadius() {

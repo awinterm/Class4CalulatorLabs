@@ -10,32 +10,35 @@ package model;
  * @author andre_000
  */
 public class RectangleService {
-    private int height;
-    private int width;
+    private double height;
+    private double width;
     private String area;
 
     public RectangleService(String height, String width) {
         // validate here.
         
-        this.height = Integer.parseInt(height);
-        this.width = Integer.parseInt(width);
+        this.height = Double.parseDouble(height);
+        this.width = Double.parseDouble(width);
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
     }
+
+
+
     
     private String calculateArea(){
         area = (height * width) + "";
