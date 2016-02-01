@@ -23,7 +23,7 @@ import model.TriangleService;
  */
 @WebServlet(name = "RecTriCircController", urlPatterns = {"/MultiShape"})
 public class RecTriCircController extends HttpServlet {
-    private final String RESPONSE_PAGE = "/Lab3.jsp";
+    private final String RESPONSE_PAGE = "/lab3.jsp";
     private final String RECTANGLE = "RECTANGLE";
     private final String TRIANGLE = "TRIANGLE";
     private final String CIRCLE = "CIRCLE";
@@ -45,29 +45,34 @@ public class RecTriCircController extends HttpServlet {
                  try (PrintWriter out = response.getWriter()) {
             
                      
-            switch (request.getParameter("shapeID")) {
-                case RECTANGLE:
-                    {
-                        String height = request.getParameter("height");
-                        String width = request.getParameter("width");
-                        RectangleService rectangleServ = new RectangleService(height, width);
-                        responseMsg = rectangleServ.getCalculatedArea();
-                        break;
-                    }
-                case TRIANGLE:
-                    {
-                        String height = request.getParameter("height");
-                        String base = request.getParameter("base");
-                        TriangleService triangleServ = new TriangleService(height, base);
-                        responseMsg = triangleServ.getCalculatedArea();
-                        break;
-                    }
-                case CIRCLE:
-                    String radius = request.getParameter("radius");
-                    CircleService circleServ = new CircleService(radius);
-                    responseMsg = circleServ.getCalculatedArea();
-                    break;
-            }
+        if( request.getParameter("shapeID").equals(RECTANGLE) ){             
+                     
+            String height = request.getParameter("height");
+            String width = request.getParameter("width");
+            
+            RectangleService rectangleServ = new RectangleService(height, width);
+            responseMsg = rectangleServ.getCalculatedArea();
+            
+           
+        } else if (request.getParameter("shapeID").equals(TRIANGLE)){
+            
+            String height = request.getParameter("height");
+            String base = request.getParameter("base");
+            
+            TriangleService triangleServ = new TriangleService(height, base);
+            responseMsg = triangleServ.getCalculatedArea();
+            
+            
+        } else if (request.getParameter("shapeID").equals(CIRCLE)){
+            
+            String radius = request.getParameter("radius");
+            
+            CircleService circleServ = new CircleService(radius);
+            responseMsg = circleServ.getCalculatedArea();
+            
+            
+            
+        }
             request.setAttribute("myMsg", responseMsg);
             
             RequestDispatcher view =

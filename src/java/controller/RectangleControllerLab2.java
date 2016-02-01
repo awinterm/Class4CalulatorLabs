@@ -21,7 +21,7 @@ import model.RectangleService;
  */
 @WebServlet(name = "RectangleControllerLab2", urlPatterns = {"/RectangleControllerLab2"})
 public class RectangleControllerLab2 extends HttpServlet {
- private final String RESPONSE_PAGE = "/indexLab2.jsp";
+ private final String RESPONSE_PAGE = "/lab2.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
