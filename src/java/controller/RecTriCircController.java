@@ -27,6 +27,7 @@ public class RecTriCircController extends HttpServlet {
     private final String RECTANGLE = "RECTANGLE";
     private final String TRIANGLE = "TRIANGLE";
     private final String CIRCLE = "CIRCLE";
+    private final String ERROR_MSG = "Error, Please try again.";
     private String responseMsg;
     
     
@@ -69,10 +70,7 @@ public class RecTriCircController extends HttpServlet {
             
             CircleService circleServ = new CircleService(radius);
             responseMsg = circleServ.getCalculatedArea();
-            
-            
-            
-        }
+        } 
             request.setAttribute("myMsg", responseMsg);
             
             RequestDispatcher view =

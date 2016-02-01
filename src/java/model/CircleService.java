@@ -12,10 +12,13 @@ package model;
 public class CircleService {
     private double radius;
     private String area;
+    private final String ERROR_MSG = "Please Try Again";
     
     
-    
-    public CircleService(String radius) {
+    public CircleService(String radius) throws IllegalArgumentException {
+        if(radius.isEmpty()){
+            throw new IllegalArgumentException(ERROR_MSG);
+        }
         this.radius = Double.parseDouble(radius);
     }
 

@@ -13,9 +13,13 @@ public class RectangleService {
     private double height;
     private double width;
     private String area;
+    private final String ERROR_MSG = "Please Try Again";
 
-    public RectangleService(String height, String width) {
-        // validate here.
+    public RectangleService(String height, String width) throws IllegalArgumentException{
+        if(height.isEmpty() || width.isEmpty()){
+            throw new IllegalArgumentException(ERROR_MSG);
+        }
+        
         
         this.height = Double.parseDouble(height);
         this.width = Double.parseDouble(width);
