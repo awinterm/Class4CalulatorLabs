@@ -85,19 +85,15 @@
                  </div>
         </div>
             <br>
-            <div class="cotainer" class="calcBox">
+            <div class="cotainer" class="answer">
             <p>
-            <% 
-                Object responseObj = request.getAttribute("myMsg");
-                Object errObj = request.getAttribute("errorMsg");
-                
-                if(responseObj != null){
-                out.println(request.getAttribute("myMsg"));
-                }
-                 if(errObj != null) {
-                    out.println(errObj.toString());
-                }   
-            %>
+
+            
+        ${requestScope.myMsg}
+
+        ${requestScope.errorMsg}
+        
+            
             </p>
             </div>
             
