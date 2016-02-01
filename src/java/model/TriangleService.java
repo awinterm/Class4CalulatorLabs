@@ -9,16 +9,14 @@ package model;
  *
  * @author andre_000
  */
-public class RectangleService {
+public class TriangleService {
     private int height;
-    private int width;
+    private int base;
     private String area;
 
-    public RectangleService(String height, String width) {
-        // validate here.
-        
-        this.height = Integer.parseInt(height);
-        this.width = Integer.parseInt(width);
+    public TriangleService(int height, int width) {
+        this.height = height;
+        this.base = width;
     }
 
     public int getHeight() {
@@ -29,21 +27,30 @@ public class RectangleService {
         this.height = height;
     }
 
-    public int getWidth() {
-        return width;
+    public int getBase() {
+        return base;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
+    public void setBase(int base) {
+        this.base = base;
     }
     
+    
+    
     private String calculateArea(){
-        area = (height * width) + "";
+        area = (height * base)/2 + "";
         return area;
     }
     
     public String getCalculatedArea(){
         calculateArea();
-        return " <h2> The area of a Rectangle with a height of " + height + " and width of " + width + " is " + area + ".</h2>";
+        return " <h2> The area of a Triangle with a height of " + height + " and a base of " + base + " is " + area + ".</h2>";
     }
+    
+    
+    
+    
+    
+    
+    
 }
