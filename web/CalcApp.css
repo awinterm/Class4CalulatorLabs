@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 1, 2016, 1:08:03 PM
+    Author     : andre_000
+*/
+
+body {
+    background-color: darkolivegreen;
+    
+}
+
+.calcBox {
+    text-align: center;
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 10px;
+}
+
