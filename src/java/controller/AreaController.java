@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.AreaCalculatorService;
 import model.CircleService;
 import model.RectangleService;
 import model.TriangleService;
@@ -21,13 +22,13 @@ import model.TriangleService;
  *
  * @author andre_000
  */
-@WebServlet(name = "RecTriCircController", urlPatterns = {"/MultiShape"})
-public class RecTriCircController extends HttpServlet {
+@WebServlet(name = "AreaController", urlPatterns = {"/AreaCalculator"})
+public class AreaController extends HttpServlet {
     private final String RESPONSE_PAGE = "/lab3.jsp";
     private final String RECTANGLE = "RECTANGLE";
     private final String TRIANGLE = "TRIANGLE";
     private final String CIRCLE = "CIRCLE";
-    private final String ERROR_MSG = "Error, Please try again.";
+    private final String ERROR_MSG = "<h1>Error, Please try again.<h1>";
     private String responseMsg;
     
     
@@ -43,16 +44,21 @@ public class RecTriCircController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-                 try (PrintWriter out = response.getWriter()) {
+                 try {
             
+            AreaCalculatorService areaCalc = new AreaCalculatorService();
+            responseMsg = "";      
                      
         if( request.getParameter("shapeID").equals(RECTANGLE) ){             
                      
             String height = request.getParameter("height");
             String width = request.getParameter("width");
             
-            RectangleService rectangleServ = new RectangleService(height, width);
-            responseMsg = rectangleServ.getCalculatedArea();
+            if(height.isEmpty() || width.isEmpty()){
+                throw new IllegalArgumentException(ERROR_MSG);
+            }
+            
+            responseMsg = areaCalc.getCalculatedAreaRectangle(height, width);
             
            
         } else if (request.getParameter("shapeID").equals(TRIANGLE)){
@@ -60,28 +66,41 @@ public class RecTriCircController extends HttpServlet {
             String height = request.getParameter("height");
             String base = request.getParameter("base");
             
-            TriangleService triangleServ = new TriangleService(height, base);
-            responseMsg = triangleServ.getCalculatedArea();
+            if(height.isEmpty() || base.isEmpty()){
+                throw new IllegalArgumentException(ERROR_MSG);
+            }
+            
+            responseMsg = areaCalc.getCalculatedAreaTriangle(height, base);
             
             
         } else if (request.getParameter("shapeID").equals(CIRCLE)){
             
             String radius = request.getParameter("radius");
             
-            CircleService circleServ = new CircleService(radius);
-            responseMsg = circleServ.getCalculatedArea();
-        } 
-            request.setAttribute("myMsg", responseMsg);
+            if(radius.isEmpty()){
+                throw new IllegalArgumentException(ERROR_MSG);
+            }
             
-            RequestDispatcher view =
-                    request.getRequestDispatcher(RESPONSE_PAGE);
-            view.forward(request, response);
+            responseMsg = areaCalc.getCalculatedAreaCircle(radius);
+        } 
+
+        
+            
             
             
             
         } catch(Exception e) {
             request.setAttribute("errorMsg", e.getMessage());
         }
+            
+                 
+            request.setAttribute("myMsg", responseMsg);
+            
+            RequestDispatcher view =
+                    request.getRequestDispatcher(RESPONSE_PAGE);
+            view.forward(request, response);     
+                 
+                 
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

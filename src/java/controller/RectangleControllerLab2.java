@@ -49,6 +49,9 @@ public class RectangleControllerLab2 extends HttpServlet {
         } catch(Exception e) {
             request.setAttribute("errorMsg", e.getMessage());
         }
+         
+         
+         
         }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

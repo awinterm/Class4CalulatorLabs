@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Area Calculator</title>
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link href="CalcApp.css" rel="stylesheet" type="text/css"/>
@@ -44,7 +44,7 @@
             <div class="col-md-4">
         
         
-        <form method="POST" action="MultiShape" name="Rectangle" id="rectangle" class="calcBox">
+        <form method="POST" action="AreaCalculator" name="Rectangle" id="rectangle" class="calcBox">
             <h2>Rectangle Calculator</h2>
             <label>Enter Height</label>
             <input type="text" name="height" value=""/>
@@ -59,7 +59,7 @@
                 </div>
              <div class="col-md-4">
         
-        <form method="POST" action="MultiShape" name="Triangle" id="triangle" class="calcBox">
+        <form method="POST" action="AreaCalculator" name="Triangle" id="triangle" class="calcBox">
             <h2>Triangle Calculator</h2>
             <label>Enter Height</label>
             <input type="text" name="height" value=""/>
@@ -73,7 +73,7 @@
              </div>
             
              <div class="col-md-4">
-        <form method="POST" action="MultiShape" name="Circle" id="circle" class="calcBox">
+        <form method="POST" action="AreaCalculator" name="Circle" id="circle" class="calcBox">
             <h2>Circle Calculator</h2>
             <label>Enter Radius</label>
             <input type="text" name="radius" value=""/>
@@ -89,9 +89,9 @@
             <p>
 
             
-        ${requestScope.myMsg}
+        ${myMsg}
 
-        ${requestScope.errorMsg}
+        ${errorMsg}
         
             
             </p>
