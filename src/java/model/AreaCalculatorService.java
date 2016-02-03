@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.text.ParseException;
+
 /**
  *
  * @author andre_000
@@ -23,7 +25,12 @@ public class AreaCalculatorService {
     }
     
     public String getCalculatedAreaCircle(String radius){
+        try{
         this.radius = Double.parseDouble(radius);
+           } catch(NumberFormatException nfe){
+            return "N";
+        }
+        
         calculateAreaCircle();
         return " <h2 class=\"calcBox\"> The area of a Circle with a radius of " + radius + " is " + area + ".</h2>";
     }
@@ -34,8 +41,12 @@ public class AreaCalculatorService {
     }
     
     public String getCalculatedAreaRectangle(String height, String width){
+        try{
         this.height = Double.parseDouble(height);
         this.width = Double.parseDouble(width);
+                } catch(NumberFormatException nfe){
+            return "N";
+        }
         calculateAreaRectangle();
         return " <h2 class=\"calcBox\"> The area of a Rectangle with a height of " + height + " and width of " + width + " is " + area + ".</h2>";
     }
@@ -45,9 +56,15 @@ public class AreaCalculatorService {
         return area;
     }
     
-    public String getCalculatedAreaTriangle(String height, String base){
-         this.height = Double.parseDouble(height);
+    public String getCalculatedAreaTriangle(String height, String base) throws NumberFormatException  {
+        try {
+        this.height = Double.parseDouble(height);
         this.base = Double.parseDouble(base);
+        } catch(NumberFormatException nfe){
+            return "N";
+        }
+        
+        
         calculateAreaTriangle();
         return " <h2 class=\"calcBox\"> The area of a Triangle with a height of " + height + " and a base of " + base + " is " + area + ".</h2>";
     }

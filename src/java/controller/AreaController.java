@@ -93,7 +93,11 @@ public class AreaController extends HttpServlet {
             request.setAttribute("errorMsg", e.getMessage());
         }
             
-                 
+            
+            if(responseMsg.equals("N")){
+                responseMsg = ERROR_MSG;
+            }
+                    
             request.setAttribute("myMsg", responseMsg);
             
             RequestDispatcher view =
