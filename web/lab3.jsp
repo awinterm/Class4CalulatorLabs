@@ -30,9 +30,9 @@
             <div class="collapse navbar-collapse" id="collapse-menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="lab1.html" target="_blank">Lab 1</a></li>
-                    <li><a href="lab2.jsp" target="_blank">Lab 2</a></li>
-                    <li><a href="lab3.jsp" target="_blank">lab 3</a></li>
+                    <li><a href="lab1.html" >Lab 1</a></li>
+                    <li><a href="lab2.jsp" >Lab 2</a></li>
+                    <li><a href="lab3.jsp" >lab 3</a></li>
                 </ul>
            </div>
         </div>
