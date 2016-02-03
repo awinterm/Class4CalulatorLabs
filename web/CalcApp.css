@@ -18,5 +18,12 @@ body {
     background-color: lightgray;
     padding: 20px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}

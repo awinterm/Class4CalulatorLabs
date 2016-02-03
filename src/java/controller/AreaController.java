@@ -28,7 +28,7 @@ public class AreaController extends HttpServlet {
     private final String RECTANGLE = "RECTANGLE";
     private final String TRIANGLE = "TRIANGLE";
     private final String CIRCLE = "CIRCLE";
-    private final String ERROR_MSG = "<h1>Error, Please try again.<h1>";
+    private final String ERROR_MSG = "<h1 class=\"calcBox\">Error, Please try again.<h1>";
     private String responseMsg;
     
     

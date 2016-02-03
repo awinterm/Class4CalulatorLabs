@@ -84,25 +84,29 @@
         </form>
                  </div>
         </div>
-            <br>
-            <div class="cotainer" class="answer">
-            <p>
-
+    </div>
             
-        ${myMsg}
-
-        ${errorMsg}
+        <br>
+            
+    <div  class="container">
+        <div class="col-md-12">
+            ${myMsg}${errorMsg}
+        </div>
+    </div>
+        <br>
+        <div><img src="circleSquareTri.png" alt="shapes" /></div>
+             
         
+        
+        <nav class="navbar	navbar-inverse	navbar-fixed-bottom">
             
-            </p>
-            </div>
-            
-             <nav class="navbar	navbar-inverse	navbar-fixed-bottom">
             <div class="container">
                 <p class="navbar-text"><i>&copy; 2016 Andrew Wintermyer</i></p>  
             </div>
                  
         </nav>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>    
+ 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   
     </body>
 </html>
